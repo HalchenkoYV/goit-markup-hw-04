@@ -116,6 +116,9 @@ a {
 }
 
 .mail-tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
@@ -132,10 +135,21 @@ a {
   color: var(--acent-color);
 }
 
+.mail-tel:hover > svg,
+.mail-tel:focus svg {
+  fill: var(--acent-color);
+}
+
 .icon-mail {
   width: 16px;
   height: 12px;
-  color: rgba(117, 117, 117, 1);
+  fill: rgba(117, 117, 117, 1);
+  margin-right: 10px;
+}
+
+.icon-phone {
+  width: 10px;
+  height: 16px;
   fill: rgba(117, 117, 117, 1);
   margin-right: 10px;
 }
@@ -143,7 +157,7 @@ a {
 /* HERO */
 .hero {
   height: 600px;
-  width: 1600px;
+  max-width: 1600px;
   background: rgba(47, 48, 58, 0.4);
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
@@ -218,12 +232,14 @@ a {
 }
 
 .advantage-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 270px;
   height: 120px;
   background-color: rgba(245, 244, 250, 1);
   margin-bottom: 30px;
   border-radius: 4px;
-  padding: 25px 100px;
 }
 
 .advantage-icon-item {
@@ -372,10 +388,9 @@ a {
 }
 
 .list-clients {
-  box-sizing: border-box;
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .list-clients-item {
@@ -384,29 +399,31 @@ a {
   justify-content: center;
   width: 170px;
   height: 92px;
-  padding: 16px 32px;
+}
+
+/* .list-clients-item:not(:last-child) {
+  margin-right: 30px;
+} */
+
+.list-clients-link-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
 
-.list-clients-item:hover {
+.list-clients-link-1:hover,
+.list-clients-link-1:focus {
   border: 1px solid #2196f3;
   border-radius: 4px;
 }
 
-.list-clients-item:hover svg {
+.list-clients-link-1:hover svg,
+.list-clients-link-1:focus svg {
   fill: #2196f3;
-}
-.list-clients-item:not(:last-child) {
-  margin-right: 30px;
-}
-.list-clients-link-1 {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  width: 106px;
-  height: 60px;
-  padding: 7px 0px;
 }
 
 .list-clients-icon-1 {
