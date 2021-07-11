@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
+       
 </head>
-<body>
-
+<body >
+   
+    
     <!--  -->
     <header>
         
@@ -26,7 +28,7 @@
             <ul class="navigation-contact">
                 <li class="mail-tel-item">
                     
-                    <a href="mailto:info@devstudio.com" class="mail-tel">
+                    <a class="mail-tel" href="mailto:info@devstudio.com" >
                         <svg class="icon-mail">
                             <use href="./images/symbol-defs.svg#icon-mail"></use>
                         </svg>
@@ -51,7 +53,7 @@
         <section class="hero ">
             <div class="container hero-bg">
                 <h1 class="hero-text">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="hero-button">Заказать услугу </button>
+                <button data-modal-open class="hero-button">Заказать услугу </button>
             </div>
             
         </section>
@@ -109,9 +111,28 @@
             <div class="container ">
                 <h2 class="header-typeh2">Чем мы занимаемся</h2>
                 <ul class="work-section">
-                    <li class="work-image"><img src="./images/2_what_are_we_doing.jpg" alt="Набираем код руководствуясь блок-схемой" width="370px" height="295px"></li>
-                    <li class="work-image"><img src="./images/3_what_are_we_doing.jpg" alt="Проверям отображение на телефоне" width="370px" height="295px"></li>
-                    <li class="work-image"><img src="./images/4_what_are_we_doing.jpg" alt="Проверям отображение на планшете" width="370px" height="295px">
+                    <li class="work-image">
+                        <div class="work-text-box">
+                            <p class="work-text">
+                                Десктопные приложения
+                            </p>
+                        </div>
+                        <img src="./images/2_what_are_we_doing.jpg" alt="Набираем код руководствуясь блок-схемой" width="370px" height="295px">
+                    </li>
+                    <li class="work-image">
+                        <div class="work-text-box">
+                            <p class="work-text">
+                                Мобильные приложения
+                            </p>
+                        </div>
+                        <img src="./images/3_what_are_we_doing.jpg" alt="Проверям отображение на телефоне" width="370px" height="295px"></li>
+                    <li class="work-image">
+                        <div class="work-text-box">
+                            <p class="work-text">
+                                Дизайнерские решения
+                            </p>
+                        </div>
+                        <img src="./images/4_what_are_we_doing.jpg" alt="Проверям отображение на планшете" width="370px" height="295px">
                     </li>
                 </ul>
             </div>
@@ -377,5 +398,15 @@
             </div>
         </div>
     </footer>
+    <div class="backdrop is-hidden data-modal">
+        <div class="modal">
+            <button data-modal-close class="btn-modal-closed">
+                <svg class="close-icon">
+                    <use href="./images/symbol-defs.svg#icon-Vector"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <script   script src="./js/modal.js"></script>
 </body>
 </html>

@@ -48,6 +48,52 @@ a {
   text-decoration: none;
 }
 
+.backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* через js убирается этот клас и всплывет полупрозрачный фон и модальное окно  */
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 580px;
+  width: 530px;
+
+  background-color: white;
+}
+
+.btn-modal-closed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.close-icon {
+  width: 11px;
+  height: 11px;
+  fill: rgba(0, 0, 0, 1);
+}
+
 .container {
   width: 1200px;
   padding-left: 15px;
@@ -71,11 +117,16 @@ a {
 }
 
 .navigation-link {
+  position: relative;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: rgba(33, 33, 33, 1);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .header-box {
@@ -114,6 +165,16 @@ a {
 .activ-page {
   color: var(--acent-color);
 }
+.activ-page::before {
+  content: "";
+  position: absolute;
+  bottom: -32px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--acent-color);
+}
 
 .mail-tel {
   display: flex;
@@ -124,6 +185,10 @@ a {
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: var(--third-text);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .mail-tel-item:not(:last-child) {
@@ -145,6 +210,10 @@ a {
   height: 12px;
   fill: rgba(117, 117, 117, 1);
   margin-right: 10px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .icon-phone {
@@ -211,12 +280,16 @@ a {
   padding: 10px 32px;
   min-width: 200px;
   margin: 0 auto;
+  transition-property: background-color, color;
+  transition-duration: 2000ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .hero-button:hover,
 .hero-button:focus {
   background-color: #188ce8;
-  color: fffffff;
+  color: #ffffff;
 }
 
 .advantage-box {
@@ -331,12 +404,20 @@ a {
   padding: 12px;
   border-radius: 50%;
   background-color: #fff;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .icon-list-item {
   width: 20px;
   height: 20px;
   fill: var(--icon-socialNetworks);
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .icon-ourteam-box a:hover,
@@ -371,6 +452,32 @@ a {
   display: flex;
 }
 
+.work-image {
+  position: relative;
+  width: 370px;
+  height: 295px;
+}
+
+.work-text-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.work-text {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .work-image:not(:last-child) {
   margin-right: 30px;
 }
@@ -413,6 +520,13 @@ a {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+}
+
+.list-clients-link-1 svg {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .list-clients-link-1:hover,
@@ -496,6 +610,10 @@ a {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   margin-right: 10px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .icon-list-item {
@@ -517,6 +635,10 @@ a {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .logo-footer {
@@ -564,6 +686,10 @@ footer .icon-list-item {
   border-radius: 4px;
   border: none;
   padding: 6px 22px;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .portfolio-button:hover,
@@ -582,6 +708,45 @@ footer .icon-list-item {
   /* identical to box height, or 200% */
   letter-spacing: 0.06em;
   color: var(--main-text);
+}
+
+.box-witout-bottom {
+  position: absolute;
+  width: 370px;
+  height: 295px;
+  overflow: hidden;
+}
+
+/* .portfolio-overlay-box {
+  position: absolute;
+  opacity: 0;
+  padding: 63px 24px;
+} */
+
+.portfolio-overlay-box {
+  position: absolute;
+  background: rgba(33, 150, 243, 0.9);
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+}
+
+.projects-focus:hover .portfolio-overlay-box,
+.projects-focus:focus .portfolio-overlay-box {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+.portfolio-overlay-text {
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #ffffff;
 }
 
 .portfolio-text2th {
@@ -625,15 +790,19 @@ footer .icon-list-item {
 }
 
 .item-list-projects {
-  /* если убрать ширину то получаться зазор на 8 пиксилей */
+  position: relative;
   max-width: 370px;
   margin-left: 30px;
   margin-top: 30px;
   flex-basis: calc((100% - 90px) / 3);
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0ms;
 }
 
 .item-list-projects:hover,
-.item-list-projects:hover {
+.item-list-projects:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
